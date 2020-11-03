@@ -11,13 +11,24 @@ import os
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 from NotebookCleaner import dropColumns,readExcel, fromIdentifier, toIdentifier
-
+import NotebookCleaner
+import pandas as pd
 root = tk.Tk()
 root.withdraw()
 
 userFileImport = askopenfilename()
 fileType = os.path.splitext(userFileImport)[1]
 x = dropColumns(readExcel(userFileImport))
+fromIdentifier(x)
+toIdentifier(x)
+NotebookCleaner.dateParser(x)
+NotebookCleaner.timeZoneParser(x)
+NotebookCleaner.timeParser(x)
+NotebookCleaner.fromName(x)
+NotebookCleaner.toName(x)
 
-fromID = fromIdentifier(x)
-toID = toIdentifier(x)
+# =============================================================================
+# Saving to CSV
+# =============================================================================
+
+NotebookCleaner.saveCSV(x)
