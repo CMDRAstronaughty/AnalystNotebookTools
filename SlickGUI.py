@@ -6,6 +6,8 @@ Version: V-1.0(A)
 
 Module: NotebookCleaner.py
 '''
+def UploadAction(event=None):
+    tkinter.filedialog.askopenfilename()
 # ===================================================
 # Importing Libraries
 # ===================================================
@@ -18,49 +20,71 @@ import NotebookCleaner
 # ===================================================
 root = Tk()
 root.title("E.D.N.A - Extraction of Data for Notebook Analysis")
-root.geometry('600x350')
-root.configure(bg='grey')
+root.geometry('500x500')
+root.resizable(False,False)
 
 # ===================================================
 # Title Layout Section (Buttons, Text & Objects)
 # ===================================================
-topFrame = Frame(master=root)
-topFrame.pack(side=TOP)
+#topFrame = Frame(master=root,relief=RAISED,borderwidth=1)
+#topFrame.pack(side=TOP)
 
-appTitle = Label(master=topFrame,text='U.S. Special Operations Command',bg='grey',fg='yellow',font=(None,20))
-jdogTitle = Label(master=topFrame,text='Joint Document & Media Exploitation Group (JDOG)',bg='grey',fg='yellow',font=(None,11))
-idstTitle = Label(master=topFrame,text='Intelligence Data Science Team (IDST)',bg='grey',fg='yellow',font=(None,11))
+appTitle = Label(master=root,text='U.S. Special Operations Command',font=(None,20))
+jdogTitle = Label(master=root,text='Joint Document & Media Exploitation Group (JDOG)',font=(None,11))
+idstTitle = Label(master=root,text='Intelligence Data Science Team (IDST)',font=(None,11))
+blankspace1 = Label(master=root,text='')
+blankspace2 = Label(master=root,text='')
+appTitle.pack()
+jdogTitle.pack()
+idstTitle.pack()
+blankspace1.pack()
+blankspace2.pack()
 
-appTitle.pack(fill=X)
-jdogTitle.pack(fill=X)
-idstTitle.pack(fill=X)
 # ===================================================
-# Left Frame Section
+# Second Frame Section - Import Button
 # ===================================================
-leftFrame = Frame(master=root)
-leftFrame.pack(side=LEFT)
+secondFrame = Frame(master=root,relief=RAISED,borderwidth=1)
+secondFrame.pack()
 
-importLabel = Label(master = leftFrame,text='Select the file you would like to ingest:',bg='grey',fg='white', font=(None,12))
-importButton = Button (master = leftFrame,text='Import',command=tkinter.filedialog.askopenfilename,compound=RIGHT)
+importLabel = Label(master = secondFrame,text='Select the file you would like to ingest:', font=(None,12))
+importButton = Button (master = secondFrame,text='Import',command=UploadAction,compound=RIGHT)
+blankspace3 = Label(master=root,text='')
 
 importLabel.pack()
 importButton.pack()
-# ===================================================
-# Middle Frame Section
-# ===================================================
-middleFrame = Frame(master=root)
-middleFrame.pack(side=LEFT)
+blankspace3.pack()
 
-testLabel = Label(master=middleFrame,text="This is just a filler", bg='white',font=(None,12))
+# ===================================================
+# Middle Frame Section - Extraction Type Radio Button
+# ===================================================
+middleFrame = Frame(master=root,relief=RAISED,borderwidth=1)
+middleFrame.pack()
+
+v = IntVar()
+
+testLabel = Label(master=middleFrame,text="Select the CELLEX Data you would like to extract:",font=(None,12),wraplength=278)
+callLog = Radiobutton(master = middleFrame,text='Call Logs', variable=v,value=1)
+SMS = Radiobutton(master = middleFrame,text='SMS/MMS', variable=v,value=2)
+Chats = Radiobutton(master = middleFrame,text='Chats', variable=v,value=3)
+Contacts = Radiobutton(master = middleFrame,text='Contacts', variable=v,value=4)
+
 testLabel.pack()
+callLog.pack()
+SMS.pack()
+Chats.pack()
+Chats.pack()
+Contacts.pack()
+
+
 # ===================================================
-# Right Frame Section
+# Right Frame Section - File Save Location - Submit
 # ===================================================
-rightFrame = Frame(master=root)
+rightFrame = Frame(master=root,relief=RAISED,borderwidth=1)
 rightFrame.pack(side=BOTTOM)
 
 submitButton = Button(master=rightFrame,text='Extract!')
 submitButton.pack()
+
 # ===================================================
 # Running Root window for loop
 # ===================================================

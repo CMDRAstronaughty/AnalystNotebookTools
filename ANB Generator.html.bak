@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>ANB Generator</title>
+  </head>
+  <body style="background-color: #080e08;">
+    <table style="width: 100%" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 26.02px;"><img src="file:///E:/IDSTProjects/AnalystNotebok/Images/United_States_Special_Operations_Command_Insignia.svg.png"
+              alt="SOCOM Logo" title="USSOCOM" style="width: 140px; height: 165px;"><br>
+          </td>
+          <td style="width: 1102.52px; text-align: center;">
+            <h1><span style="color: #ffcc33;">United States Special Operations
+                Command</span></h1>
+            <span style="color: white;"> <span style="color: #ffcc33;">Joint
+                Document and Media Exploitation Operations Group (JDOG) - I2EC</span></span><span
+              style="color: #ffcc33;"><br>
+              Intelligence Data Science Team (IDST) - J24<br>
+            </span>
+            <h3 style="  text-align: center;"><span style="color: #ffcc33;"><u>CELLEX
+                  Analyst Notebook Generator Tool</u></span></h3>
+          </td>
+          <td style="margin-left: -46px; width: 101.483px; text-align: center;"><img
+              src="file:///E:/IDSTProjects/AnalystNotebok/Images/BlueTeam.png" alt="BlueTeam"
+              title="IDST BlueTeam" style="width: 140px; height: 140px;"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><b><span style="color: white;">Step 1: Ingesting Data</span></b></p>
+    <p><span style="color: white;">Import the location of the CELLEX Report <br>
+      </span></p>
+    <input name="CELLEX Report Location" required="required" style="color: white;"
+      type="file">
+    <p><b><span style="color: white;"></span></b></p>
+    <hr style="color: #ffcc33; margin-left: auto; margin-right: auto;">
+    <p><b><span style="color: white;">Step 2: Select Data</span></b></p>
+    <p><b><span style="color: white;"><br>
+        </span></b></p>
+    <p><b><span style="color: white;">Step 3: Exporting Data</span></b><br>
+    </p>
+    <p><span style="color: white;"><br>
+      </span></p>
+    <p><span style="color: white;"><br>
+      </span></p>
+    <p><span style="color: white;"><br>
+      </span></p>
+    <p><span style="color: white;"><br>
+      </span></p>
+    <p><span style="color: white;"><br>
+      </span></p>
+    <p><span style="color: white;"><br>
+      </span></p>
+    <p><span style="color: white;"></span><br>
+    </p>
+  </body>
+</html>

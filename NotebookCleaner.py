@@ -38,7 +38,6 @@ TimeZoneRegex = r"(UTC[+]\d)"
 # =============================================================================
 # Defining Functions for use throughout
 # =============================================================================
-
 def readExcel(userFileImport):
     '''
     This function will read excel reports based off user file import
@@ -47,7 +46,6 @@ def readExcel(userFileImport):
     '''
     df = pd.read_excel(userFileImport, sheet_name='Call Log',header=1,index_col=0)
     return df
-
 def dropColumns(importedFile):
     '''
     Parameters
@@ -68,7 +66,6 @@ def dropColumns(importedFile):
     naDrop.insert(5,'Date','')
     naDrop.insert(7,'Time_Zone','')
     return naDrop
-
 def fromIdentifier(args):
     '''
     Parameters
@@ -83,7 +80,6 @@ def fromIdentifier(args):
     args['From_Identifier'] = args['From_Identifier'].str.extract(onlyNumbersRegex,expand=True)
     args['From_Identifier'].fillna('', inplace = True)
     return args['From_Identifier']
-
 def toIdentifier(args):
     """
     Parameters
@@ -99,7 +95,6 @@ def toIdentifier(args):
     args['To_Identifier'] = args['To_Identifier'].str.extract(onlyNumbersRegex,expand = True)
     args['To_Identifier'].fillna('', inplace = True)
     return args['To_Identifier']
-
 def dateParser (args):
     """
     Parameters
@@ -113,7 +108,6 @@ def dateParser (args):
     """
     args['Date'] = args['Time'].str.extract(dateRegex,expand = True)
     return args['Date']
-
 def timeZoneParser (args):
     """
     Parameters
@@ -127,7 +121,6 @@ def timeZoneParser (args):
     """
     args['Time_Zone'] = args['Time'].str.extract(TimeZoneRegex,expand = True)
     return args['Time_Zone']
-    
 def timeParser (args):
     """    
     Parameters
@@ -141,7 +134,6 @@ def timeParser (args):
     """
     args['Time'] = args['Time'].str.extract(timeRegex,expand = True)
     return args['Time']
-
 def fromName (args):
     """
     Parameters
@@ -158,7 +150,6 @@ def fromName (args):
     args['From_Name'] = [re.sub(r'\S\d{6,11}\s','',str(x)) for x in args['From_Name']]
     args['From_Name'].replace('nan',np.nan, inplace = True)
     return args['From_Name']
-
 def toName (args):
     """
     Parameters
@@ -174,7 +165,8 @@ def toName (args):
     args['To_Name'] = [re.sub(r'\S\d{6,11}\s','',str(x)) for x in args['To_Name']]
     args['To_Name'].replace('nan', np.nan, inplace = True)
     return args['To_Name']
-
+def dropParties(args):
+    return args.drop(columns='Parties')
 def saveCSV(file):
     """
     Parameters
@@ -185,24 +177,6 @@ def saveCSV(file):
     -------
     None.
     """
-    #nanRemove = file.fillna('', inplace = True)
     userFileSave = asksaveasfilename(defaultextension = '.csv')
     file.to_csv(userFileSave,index = False, header = True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

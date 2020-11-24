@@ -26,6 +26,7 @@ NotebookCleaner.timeZoneParser(x)
 NotebookCleaner.timeParser(x)
 NotebookCleaner.fromName(x)
 NotebookCleaner.toName(x)
+NotebookCleaner.dropParties(x)
 
 # =============================================================================
 # Saving to CSV
