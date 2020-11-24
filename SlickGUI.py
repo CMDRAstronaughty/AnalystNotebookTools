@@ -22,6 +22,7 @@ root = Tk()
 root.title("E.D.N.A - Extraction of Data for Notebook Analysis")
 root.geometry('500x500')
 root.resizable(False,False)
+root.iconbitmap('D:\Documents\IDSTProjects\AnalystNotebok\Images\edna.ico')
 
 # ===================================================
 # Title Layout Section (Buttons, Text & Objects)
@@ -48,12 +49,13 @@ secondFrame.pack()
 
 importLabel = Label(master = secondFrame,text='Select the file you would like to ingest:', font=(None,12))
 importButton = Button (master = secondFrame,text='Import',command=UploadAction,compound=RIGHT)
-blankspace3 = Label(master=root,text='')
+blankspace3 = Label(master=secondFrame,text='')
+blackspace31 = Label(master=root,text='')
 
 importLabel.pack()
 importButton.pack()
 blankspace3.pack()
-
+blackspace31.pack()
 # ===================================================
 # Middle Frame Section - Extraction Type Radio Button
 # ===================================================
@@ -75,12 +77,14 @@ Chats.pack()
 Chats.pack()
 Contacts.pack()
 
+blankspace4 = Label(master=root,text='').pack()
+blankspace5 = Label(master=root,text='').pack()
 
 # ===================================================
-# Right Frame Section - File Save Location - Submit
+# Bottom Frame Section - File Save Location - Submit
 # ===================================================
 rightFrame = Frame(master=root,relief=RAISED,borderwidth=1)
-rightFrame.pack(side=BOTTOM)
+rightFrame.pack()
 
 submitButton = Button(master=rightFrame,text='Extract!')
 submitButton.pack()

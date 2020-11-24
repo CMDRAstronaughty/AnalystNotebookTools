@@ -166,7 +166,7 @@ def toName (args):
     args['To_Name'].replace('nan', np.nan, inplace = True)
     return args['To_Name']
 def dropParties(args):
-    return args.drop(columns='Parties')
+    return args.drop('Parties',axis=1,inplace=True)
 def saveCSV(file):
     """
     Parameters
