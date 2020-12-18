@@ -66,6 +66,7 @@ def dropColumns(importedFile):
     naDrop.insert(5,'Date','')
     naDrop.insert(7,'Time_Zone','')
     return naDrop
+
 def fromIdentifier(args):
     '''
     Parameters
